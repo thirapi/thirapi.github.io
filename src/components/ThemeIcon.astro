@@ -84,7 +84,7 @@ const { class: className, ...rest } = Astro.props;
 </style>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+  const setupThemeToggle = () => {
     const theme = (() => {
       const localStorageTheme = localStorage?.getItem("theme") ?? "";
       if (["dark", "light"].includes(localStorageTheme)) {
@@ -105,7 +105,8 @@ const { class: className, ...rest } = Astro.props;
     localStorage.setItem("theme", theme);
 
     const toggleBtn = document.getElementById("themeToggle");
-    if (toggleBtn) {
+    if (toggleBtn && !toggleBtn.dataset.themeBound) {
+      toggleBtn.dataset.themeBound = "true";
       toggleBtn.addEventListener("click", () => {
         const root = document.documentElement;
         root.classList.toggle("dark");
@@ -120,7 +121,17 @@ const { class: className, ...rest } = Astro.props;
       const isDark = document.documentElement.classList.contains("dark");
       toggleBtn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
     }
+  };
 
+  document.addEventListener("DOMContentLoaded", setupThemeToggle);
+  document.addEventListener("astro:after-swap", setupThemeToggle);
+
+  if (document.readyState !== "loading") {
+    setupThemeToggle();
+  }
+
+  if (!window.themeSystemListenerBound) {
+    window.themeSystemListenerBound = true;
     // Listen for system theme changes (only if user hasn't set a preference)
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     mediaQuery.addEventListener("change", (e) => {
@@ -135,5 +146,5 @@ const { class: className, ...rest } = Astro.props;
         }
       }
     });
-  });
+  }
 </script>

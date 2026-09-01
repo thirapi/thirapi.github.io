@@ -18,25 +18,28 @@ const renderItems = () =>
 
 export function TechStack() {
   return (
-    <section className="my-4">
-      <h2 className="text-2xl font-semibold mb-4">What I Use</h2>
+    <section className="my-4 min-w-0">
+      <div className="mb-5 border-b border-border pb-3">
+        <h2 className="text-xl font-semibold sm:text-2xl">What I Use</h2>
+        <p className="mt-1 text-sm text-muted-foreground">Tools I reach for most often.</p>
+      </div>
 
-      <div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+      <div className="hidden grid-cols-2 gap-3 sm:grid">
         {TechStackData.map(({ name, icon }) => {
           const Icon = iconMap[icon];
           return (
             <div
               key={name}
-              className="flex items-center gap-2 hover:bg-muted/60 transition-colors duration-200 px-3 py-2 rounded-md shadow-sm"
+              className="flex min-w-0 items-center gap-2 rounded-md px-2 py-2 transition-colors duration-200 hover:bg-muted/60"
             >
               {Icon && <Icon className="text-xl" />}
-              <span className="text-sm">{name}</span>
+              <span className="truncate text-sm">{name}</span>
             </div>
           );
         })}
       </div>
 
-      <div className="sm:hidden max-w-sm mx-auto px-4">
+      <div className="sm:hidden w-[calc(100%+2rem)] -translate-x-4 overflow-hidden py-1">
         <Marquee speed={30} gradient={false} pauseOnHover>
           {renderItems()}
         </Marquee>

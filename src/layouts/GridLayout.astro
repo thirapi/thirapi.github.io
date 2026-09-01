@@ -2,10 +2,11 @@
 import Navbar from "@/components/Navbar";
 import ThemeIcon from "../components/ThemeIcon.astro";
 const { children } = Astro.props;
+const { class: className = "" } = Astro.props;
 ---
 
 <div
-  class="relative w-full h-full flex items-center justify-center bg-white dark:bg-black font-sans"
+  class={`relative flex h-full min-w-0 items-center justify-center overflow-x-hidden bg-white font-sans dark:bg-black ${className}`}
 >
   <ThemeIcon class="absolute top-3.5 right-4 z-20 cursor-pointer" />
 
@@ -19,9 +20,9 @@ const { children } = Astro.props;
   >
   </div>
 
-  <main class="h-full flex justify-center z-20">
+  <main class="z-20 flex h-full min-w-0 w-full justify-center">
     <div
-      class="w-full px-4 sm:px-6 max-w-screen-md md:max-w-screen-lg xl:max-w-screen-xl"
+      class="w-full min-w-0 max-w-screen-md px-4 sm:px-6 md:max-w-screen-lg xl:max-w-screen-xl"
     >
       <slot />
     </div>

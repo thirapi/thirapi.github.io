@@ -3,15 +3,18 @@ import { ExternalLink, Lock } from "lucide-react";
 
 export function Project() {
   return (
-    <section className="my-4 max-w-3xl">
-      <h2 className="text-2xl font-semibold mb-4">Selected Projects</h2>
-      <div className="grid md:grid-cols-2 gap-6">
+    <section className="my-4 w-full max-w-3xl min-w-0">
+      <div className="mb-5 flex items-baseline justify-between gap-4 border-b border-border pb-3">
+        <h2 className="text-xl font-semibold sm:text-2xl">Selected Projects</h2>
+        <span className="font-doto text-xs text-muted-foreground">01—01</span>
+      </div>
+      <div className="grid gap-4 md:grid-cols-2 md:gap-6">
         {projects
         .filter((projects) => (!projects.disabled))
         .map((project) => (
-          <div key={project.title} className="p-4 rounded-lg border shadow-sm bg-white hover:bg-neutral-100 dark:bg-neutral-900/60 dark:hover:bg-neutral-900/75">
-            <h3 className="text-xl font-bold">{project.title}</h3>
-            <p className="text-muted-foreground">{project.description}</p>
+          <article key={project.title} className="group flex min-w-0 flex-col rounded-lg border bg-white p-4 shadow-sm transition-colors hover:bg-neutral-100 dark:bg-neutral-900/60 dark:hover:bg-neutral-900/75 sm:p-5">
+            <h3 className="break-words text-xl font-bold">{project.title}</h3>
+            <p className="mt-2 break-words text-sm leading-6 text-muted-foreground sm:text-base">{project.description}</p>
 
             <div className="flex flex-wrap gap-2 text-sm mt-2">
               {project.stack.map((tech) => (
@@ -21,7 +24,7 @@ export function Project() {
               ))}
             </div>
 
-            <div className="mt-4 flex items-center gap-3 text-sm">
+            <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-6 text-sm">
               {project.link ? (
                 <a
                   href={project.link}
@@ -52,7 +55,7 @@ export function Project() {
                 </span>
               )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
