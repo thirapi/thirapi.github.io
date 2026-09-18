@@ -18,6 +18,7 @@ import {
   SiLinux,
   SiDrizzle,
   SiGitlab,
+  SiGo,
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
@@ -41,5 +42,6 @@ export const iconMap: Record<string, React.ElementType> = {
   SiLinux,
   SiDrizzle,
   SiGitlab,
+  SiGo,
   TbBrandNextjs,
 };

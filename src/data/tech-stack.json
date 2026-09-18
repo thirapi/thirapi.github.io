@@ -1,28 +1,14 @@
 [
-  { "name": "JavaScript", "icon": "SiJavascript" },
   { "name": "TypeScript", "icon": "SiTypescript" },
-  { "name": "Node.js", "icon": "SiNodedotjs" },
-
+  { "name": "JavaScript", "icon": "SiJavascript" },
+  { "name": "Go", "icon": "SiGo" },
   { "name": "React", "icon": "SiReact" },
-  { "name": "Nextjs", "icon": "TbBrandNextjs" },
+  { "name": "Next.js", "icon": "TbBrandNextjs" },
   { "name": "Astro", "icon": "SiAstro" },
-
   { "name": "Tailwind", "icon": "SiTailwindcss" },
-  { "name": "Shadcn/ui", "icon": "SiShadcnui" },
-  { "name": "CSS", "icon": "SiCss3" },
-  { "name": "HTML", "icon": "SiHtml5" },
-
+  { "name": "Node.js", "icon": "SiNodedotjs" },
+  { "name": "PostgreSQL", "icon": "SiPostgresql" },
   { "name": "Prisma", "icon": "SiPrisma" },
   { "name": "Drizzle", "icon": "SiDrizzle" },
-  { "name": "PostgreSQL", "icon": "SiPostgresql" },
-
-  { "name": "Zod", "icon": "SiZod" },
-  { "name": "Pusher", "icon": "SiPusher" },
-
-  { "name": "Git", "icon": "SiGit" },
-  { "name": "GitHub", "icon": "SiGithub" },
-  { "name": "GitLab", "icon": "SiGitlab" },
-
-  { "name": "Vercel", "icon": "SiVercel" },
-  { "name": "Linux", "icon": "SiLinux" }
+  { "name": "Pusher", "icon": "SiPusher" }
 ]

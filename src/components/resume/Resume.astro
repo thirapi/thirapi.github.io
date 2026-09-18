@@ -1,0 +1,56 @@
+---
+import GridLayout from "@/layouts/GridLayout.astro";
+import FadeInSection from "../FadeInSection";
+import { Download } from "lucide-react";
+
+// Taruh file PDF di: public/resume.pdf
+// Halaman ini otomatis menampilkannya + tombol download aktif.
+---
+
+<GridLayout width="wide">
+  <FadeInSection client:load>
+    <div class="w-full min-w-0">
+      <header class="mb-8 w-full min-w-0 max-w-2xl sm:mb-10">
+        <p class="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+          Resume
+        </p>
+        <h1 class="mb-4 font-noto text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+          Resume
+        </h1>
+        <p class="max-w-prose font-noto text-base leading-7 text-muted-foreground sm:text-lg">
+          One-page overview of my experience, skills, and education.
+        </p>
+        <a
+          href="/resume.pdf"
+          download
+          class="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-noto text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          <Download className="h-4 w-4" />
+          Download PDF
+        </a>
+      </header>
+
+      <div class="w-full min-w-0 overflow-hidden rounded-lg border border-border bg-white dark:bg-neutral-900/60">
+        <object
+          data="/resume.pdf"
+          type="application/pdf"
+          class="h-[75dvh] min-h-[480px] w-full min-w-0"
+        >
+          <div class="flex flex-col items-center gap-4 p-8 text-center font-noto">
+            <p class="text-muted-foreground">
+              Preview tidak tersedia — browser tidak mendukung pratinjau PDF
+              atau file belum diunggah.
+            </p>
+            <a
+              href="/resume.pdf"
+              download
+              class="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Download PDF
+            </a>
+          </div>
+        </object>
+      </div>
+    </div>
+  </FadeInSection>
+</GridLayout>

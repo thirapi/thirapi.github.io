@@ -6,7 +6,7 @@ export default {
     extend: {
       fontFamily: {
         noto: ['"Noto Sans"', "sans-serif"], 
-        doto: ['"Doto"', 'monospace'],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",

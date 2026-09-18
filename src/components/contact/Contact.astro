@@ -4,33 +4,48 @@ import { Mail, MapPin, Twitter, Github } from "lucide-react";
 import FadeInSection from "../FadeInSection";
 ---
 
-<GridLayout>
+<GridLayout width="narrow">
   <FadeInSection client:load>
-    <section class="flex flex-col justify-center items-start p-4 md:pt-0">
-      <ul class="space-y-4 text-[18px] font-semibold font-doto tracking-wide">
-        <li class="flex items-center gap-4">
-          <Mail className="w-5 h-5" />
-          <span>thirapi@proton.me</span>
-        </li>
-        <li class="flex items-center gap-4">
-          <Github className="w-5 h-5" />
-          <a href="https://github.com/thirapi">@thirapi</a>
-        </li>
-        <li class="flex items-center gap-4">
-          <Twitter className="w-5 h-5" />
-          <a href="https://x.com/faiqthirapi">@faiqthirapi</a>
-        </li>
-        <!-- <li class="flex items-center gap-4">
-        <Linkedin className="w-5 h-5" />
-        <a href="https://linkedin.com/in/faiq" target="_blank" class="underline"
-          >linkedin.com/in/faiq</a
-        >
-      </li> -->
-        <li class="flex items-center gap-4">
-          <MapPin className="w-5 h-5" />
-          <span>Jawa Timur, Indonesia</span>
-        </li>
-      </ul>
-    </section>
+    <div class="flex w-full min-w-0 flex-col">
+      <p
+        class="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground"
+      >
+        Contact
+      </p>
+      <h1
+        class="mb-8 font-noto text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl"
+      >
+        Say hello
+      </h1>
+      <section class="w-full min-w-0">
+        <ul class="space-y-4 font-mono text-base font-semibold tracking-wide sm:text-lg">
+          <li class="flex items-center gap-4">
+            <Mail className="w-5 h-5 shrink-0" />
+            <a
+              href="mailto:thirapi@proton.me"
+              class="transition-colors hover:text-primary hover:underline underline-offset-4"
+            >thirapi@proton.me</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <Github className="w-5 h-5 shrink-0" />
+            <a
+              href="https://github.com/thirapi"
+              class="transition-colors hover:text-primary hover:underline underline-offset-4"
+            >@thirapi</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <Twitter className="w-5 h-5 shrink-0" />
+            <a
+              href="https://x.com/faiqthirapi"
+              class="transition-colors hover:text-primary hover:underline underline-offset-4"
+            >@faiqthirapi</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <MapPin className="w-5 h-5 shrink-0" />
+            <span>Jawa Timur, Indonesia</span>
+          </li>
+        </ul>
+      </section>
+    </div>
   </FadeInSection>
 </GridLayout>

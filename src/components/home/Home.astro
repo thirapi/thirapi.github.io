@@ -1,29 +1,67 @@
 ---
 import GridLayout from "@/layouts/GridLayout.astro";
 import FadeInSection from "../FadeInSection";
+import { ArrowRight, Mail, Github } from "lucide-react";
 ---
 
-<GridLayout>
+<GridLayout width="narrow">
   <FadeInSection client:load>
-    <header class="mb-8">
+    <div class="flex w-full min-w-0 flex-col">
+      <p
+        class="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground"
+      >
+        Faiq Thirafi — Jr. Software Engineer
+      </p>
+
       <h1
-        class="font-extrabold text-[clamp(1.5rem,5vw,3rem)] leading-[0.9] max-w-[20ch] font-noto"
+        class="font-noto text-[clamp(2rem,6vw,3.5rem)] font-extrabold leading-[1.02] tracking-tight"
       >
         Ideas Engineered, Interfaces Delivered
       </h1>
-      <span class="uppercase text-[18px] font-semibold font-doto tracking-wide">
-        Faiq Thirafi - Full-Stack Developer (Jr.) @ <span class="blur-sm"
-          >komunikasi</span
-        >
-      </span>
-    </header>
 
-    <div class="flex flex-col font-noto text-[16px]">
-      <span class="mb-2">
-        “If debugging is the process of removing software bugs, <br />
-        then programming must be the process of putting them in.”
-      </span>
-      <span>― Edsger W. Dijkstra</span>
+      <p class="mt-4 font-mono text-sm font-semibold uppercase tracking-wide sm:text-base">
+        Full-Stack Developer (Jr.) @ <span class="blur-sm">komunikasi</span>
+      </p>
+
+      <p class="mt-6 max-w-prose font-noto text-base leading-7 text-muted-foreground sm:text-lg">
+        I build web apps end to end — from Go & TypeScript backends to React
+        interfaces. Currently shipping chan engines, chat apps, and API
+        wrappers.
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 font-noto text-sm font-semibold sm:flex-row sm:flex-wrap sm:items-center">
+        <a
+          href="/work"
+          class="group inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-center text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          View work
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-center transition-colors hover:bg-muted/60"
+        >
+          <Mail className="h-4 w-4" />
+          Get in touch
+        </a>
+        <a
+          href="https://github.com/thirapi"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-center text-muted-foreground transition-colors hover:bg-muted/60 hover:text-primary"
+        >
+          <Github className="h-4 w-4" />
+          GitHub
+        </a>
+      </div>
+
+      <blockquote class="mt-12 border-l-2 border-border pl-4 font-noto text-sm leading-6 text-muted-foreground sm:text-base">
+        “If debugging is the process of removing software bugs, then
+        programming must be the process of putting them in.”
+        <cite class="mt-1 block font-mono text-xs not-italic uppercase tracking-[0.2em]">
+          — Edsger W. Dijkstra
+        </cite>
+      </blockquote>
     </div>
   </FadeInSection>
 </GridLayout>

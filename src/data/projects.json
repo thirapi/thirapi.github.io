@@ -1,19 +1,56 @@
 [
   {
-    "title": "Komunikasi",
-    "description": "A modern web-based group chat app built with Next.js, Prisma ORM, and shadcn/ui.",
-    "stack": ["Next.js", "Prisma ORM", "Pusher", "Zod"],
-    "link": "https://komunikasi.vercel.app",
-    "repo": null,
-    "private": true
+    "title": "62ch",
+    "description": "Anonymous local chan engine for shitposting. Full posting, threads & boards.",
+    "stack": ["TypeScript", "Next.js", "Web"],
+    "language": "TypeScript",
+    "stars": 1,
+    "link": "https://62chan.qzz.io",
+    "repo": "https://github.com/thirapi/62ch"
   },
-
   {
-    "title": "URL Shortener",
-    "description": "Minimal URL shortener built using Next.js & Prisma.",
-    "stack": ["Next.js", "Prisma", "SQLite"],
-    "link": "https://short.faiq.dev",
-    "repo": "https://github.com/faiqthirafi/url-shortener",
-    "disabled": true
+    "title": "aternos",
+    "description": "Unofficial Aternos REST API wrapper and web dashboard. Go backend, TypeScript/React frontend.",
+    "stack": ["Go", "TypeScript", "React"],
+    "language": "Go",
+    "stars": 0,
+    "link": "https://aternos-rouge.vercel.app",
+    "repo": "https://github.com/thirapi/aternos"
+  },
+  {
+    "title": "keep-clean-komunikasi",
+    "description": "A simple webchat built with Next.js. Lightweight rooms & realtime messages.",
+    "stack": ["Next.js", "TypeScript", "Pusher"],
+    "language": "TypeScript",
+    "stars": 0,
+    "link": "https://komunikasi.qzz.io",
+    "repo": "https://github.com/thirapi/keep-clean-komunikasi"
+  },
+  {
+    "title": "komunikasi-archived",
+    "description": "Archived microblogging app with a full ActivityPub implementation.",
+    "stack": ["TypeScript", "ActivityPub"],
+    "language": "TypeScript",
+    "stars": 0,
+    "link": null,
+    "repo": "https://github.com/thirapi/komunikasi-archived"
+  },
+  {
+    "title": "tg-bot",
+    "description": "Telegram bot built with JavaScript.",
+    "stack": ["JavaScript", "Telegram"],
+    "language": "JavaScript",
+    "stars": 0,
+    "link": null,
+    "repo": "https://github.com/thirapi/tg-bot"
+  },
+  {
+    "title": "now-playing-spotify",
+    "description": "Spotify now-playing widget for the web.",
+    "stack": ["JavaScript", "CSS"],
+    "language": "JavaScript",
+    "stars": 0,
+    "link": null,
+    "repo": "https://github.com/thirapi/now-playing-spotify"
   }
 ]

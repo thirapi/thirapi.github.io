@@ -1,29 +1,37 @@
 ---
 import Navbar from "@/components/Navbar";
 import ThemeIcon from "../components/ThemeIcon.astro";
-const { children } = Astro.props;
-const { class: className = "" } = Astro.props;
+
+interface Props {
+  class?: string;
+  /** narrow = kolom teks (home), wide = galeri (work), full = selebar viewport */
+  width?: "narrow" | "wide" | "full";
+}
+
+const { class: className = "", width = "narrow" } = Astro.props;
+const maxWidth =
+  width === "full" ? "max-w-none" : width === "wide" ? "max-w-6xl" : "max-w-2xl";
 ---
 
 <div
-  class={`relative flex h-full min-w-0 items-center justify-center overflow-x-hidden bg-white font-sans dark:bg-black ${className}`}
+  class={`relative isolate flex min-h-dvh w-full justify-center overflow-x-clip bg-white font-sans dark:bg-black ${className}`}
 >
   <ThemeIcon class="absolute top-3.5 right-4 z-20 cursor-pointer" />
 
   <div
-    class="absolute inset-0 pointer-events-none bg-[length:40px_40px] bg-[linear-gradient(to_right,_#e4e4e7_1px,_transparent_1px),_linear-gradient(to_bottom,_#e4e4e7_1px,_transparent_1px)] dark:bg-[linear-gradient(to_right,_#262626_1px,_transparent_1px),_linear-gradient(to_bottom,_#262626_1px,_transparent_1px)]"
+    aria-hidden="true"
+    class="absolute inset-0 -z-0 pointer-events-none bg-[length:40px_40px] bg-[linear-gradient(to_right,_#e4e4e7_1px,_transparent_1px),_linear-gradient(to_bottom,_#e4e4e7_1px,_transparent_1px)] dark:bg-[linear-gradient(to_right,_#262626_1px,_transparent_1px),_linear-gradient(to_bottom,_#262626_1px,_transparent_1px)]"
   >
   </div>
 
   <div
-    class="absolute inset-0 pointer-events-none flex items-center justify-center bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,_#00000079_20%,_black)] [-webkit-mask-image:radial-gradient(ellipse_at_center,_#00000079_20%,_black)]"
+    aria-hidden="true"
+    class="absolute inset-0 -z-0 pointer-events-none flex items-center justify-center bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,_#00000079_20%,_black)] [-webkit-mask-image:radial-gradient(ellipse_at_center,_#00000079_20%,_black)]"
   >
   </div>
 
-  <main class="z-20 flex h-full min-w-0 w-full justify-center">
-    <div
-      class="w-full min-w-0 max-w-screen-md px-4 sm:px-6 md:max-w-screen-lg xl:max-w-screen-xl"
-    >
+  <main class="z-10 flex min-h-dvh w-full min-w-0 justify-center">
+    <div class={`mx-auto my-auto w-full min-w-0 px-5 py-20 sm:px-6 sm:py-28 ${maxWidth}`}>
       <slot />
     </div>
   </main>

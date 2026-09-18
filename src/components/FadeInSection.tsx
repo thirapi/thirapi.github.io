@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 
+/** Layout-neutral reveal wrapper: only animates, never dictates layout. */
 export default function FadeInSection({
   children,
   className = "",
@@ -8,15 +9,13 @@ export default function FadeInSection({
   className?: string;
 }) {
   return (
-    <div className={`flex min-h-screen w-full min-w-0 items-center overflow-hidden ${className}`}>
-      <motion.section
-        initial={{ opacity: 1, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex w-full min-w-0 flex-col items-start p-4 md:pt-0"
-      >
-        {children}
-      </motion.section>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`w-full min-w-0 ${className}`}
+    >
+      {children}
+    </motion.div>
   );
 }

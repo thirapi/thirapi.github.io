@@ -5,23 +5,24 @@ import { TechStack } from "./TechStack";
 import { Project } from "./Projects";
 ---
 
-<GridLayout class="overflow-x-hidden">
-  <FadeInSection client:load className="items-start py-24 md:items-center md:py-12">
-    <div class="w-full max-w-5xl">
-      <header class="mb-10 max-w-2xl">
-        <p class="mb-3 font-doto text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Selected work / 2025
+<GridLayout width="wide">
+  <FadeInSection client:load>
+    <div class="w-full min-w-0">
+      <header class="mb-8 w-full min-w-0 max-w-2xl sm:mb-10">
+        <p class="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+          Pinned on GitHub / thirapi
         </p>
-        <h1 class="mb-4 text-3xl font-bold leading-tight sm:text-5xl">
+        <h1 class="mb-4 font-noto text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
           Things I've Built
         </h1>
-        <p class="max-w-prose text-base leading-7 text-muted-foreground sm:text-lg">
-          A small collection of products and collaborations shaped through thoughtful interfaces and practical engineering.
+        <p class="max-w-prose font-noto text-base leading-7 text-muted-foreground sm:text-lg">
+          Six pinned repositories, from a local chan engine to a Go-powered
+          Aternos dashboard. Live demos where available, code always linked.
         </p>
       </header>
 
-      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-14">
-        <TechStack client:only="react" />
+      <div class="flex w-full min-w-0 flex-col gap-10 sm:gap-12">
+        <TechStack />
         <Project />
       </div>
     </div>
